@@ -30,28 +30,28 @@
 ## Ordem de desenvolviemnto:
 - Estrutura
   - **Página Inicial** -> Mobile First (CSS)
-    - Layout 
+    - Layout - branch: feature/layout-home
       - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
-    - Modais de Cadastro e Login 
+    - Modais de Cadastro e Login - branch: feature/login-cadastro
       - DOM + CSS + JavaScript
       - Não depende do layout pois serão ativados com um botão
-    - Funcionalidades Vitrine
+    - Funcionalidades Vitrine - branch: feature/vitrine
       - DOM + CSS + JavaScript + API
       Não depende do layout, serão ”apendados” (rs) num node HTML
-    - Funcionalidades Carrinho
+    - Funcionalidades Carrinho - branch: feature/carrinho
       - DOM + CSS + JavaScript + LocalStorage / API (-> Extra: Requisições Cart)
       - Depende do layout e da vitrine apenas para testes de adicionar e remover, que podem ser simulados
-    - Funcionalidade Pesquisa
+    - Funcionalidade Pesquisa - branch: feature/pesquisa-filtro
       - JavaScript / API (-> Extra: Filtrar produtos do usuário)
       - Depende de layout e vitrine
   - **Dashboard** -> Mobile First (CSS)
-    - Layout
+    - Layout - branch: feature/layout-dashboard
       - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
-    - Listar produtos do usuário
+    - Listar produtos do usuário - branch: feature/produtos-usuario
       - DOM + CSS + JavaScript + API
-    - Funcionalidade cadastrar produtos
+    - Funcionalidade cadastrar produtos - branch: feature/novo-produto
       - DOM + CSS + JavaScript + API
-    - Modal de edição
+    - Modal de edição - branch: feature/editar-produto
       - DOM + CSS + JavaScript + API (para o botão de enviar)
       - Depende de “Listar Produtos do Usuário”
 
