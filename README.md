@@ -1,9 +1,9 @@
 # Planejamento E-Commerce - Capstone
 
 ## Ferramentas
-> Versionamento: GitFlow
-> Organização: Trello
-> Padrão de código: Prettier (Extensão VScode) / CamelCase (JavaScript) / BEM (CSS) / Português
+- Versionamento: GitFlow
+- Organização: Trello
+- Padrão de código: Prettier (Extensão VScode) / CamelCase (JavaScript) / BEM (CSS) / Português
 
 ## Fluxograma
 > Página Inicial:
