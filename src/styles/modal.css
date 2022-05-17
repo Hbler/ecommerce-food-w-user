@@ -1,0 +1,136 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+main {
+    width: 600px;
+    height: 480px ;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-content:space-between;
+    text-align: center;
+    background-color: #DEE2E6;
+}
+
+h1 { 
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    margin-top: 50px;
+    color:  #FF2253;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 496px;
+    height: 305px;
+    margin: 0 auto;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 26px 0;
+}
+
+a {
+    font-family: 'Inter', sans-serif;
+    text-decoration:none;
+    color:#0CA678;
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform:uppercase;
+}
+
+input {
+    width: 490px;
+    height: 40px;
+    padding: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    border-radius: 32px;
+    width: 240px;
+    height: 52px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background-color: #FF2253;
+    color: #F8F9FA;
+    border: 1.5px solid #FF2253;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 375px) {
+    main {
+        width: 300px;
+        height: 500px ;
+        display: flex;
+        flex-direction: column;
+        align-content:space-between;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 180px;
+        height: 305px;
+        margin: 0 auto;
+    }
+
+    h1 { 
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        color:  #FF2253;
+    }
+
+    input {
+        width: 190px;
+        height: 40px;
+        border-bottom: 15px;
+        padding: 3px;
+        font-size: 14px;
+        font-weight: 300;
+        border-radius: 6px;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 25px;
+    }
+
+    button {
+        border-radius: 32px;
+        width: 140px;
+        height: 52px;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        background-color: #FF2253;
+        color: #F8F9FA;
+        border: 1.5px solid #FF2253;
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
