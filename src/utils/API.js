@@ -18,7 +18,7 @@ class API {
         return err;
       });
 
-    console.log(res);
+    if (typeof res === "string") localStorage.setItem("token", res);
     return res;
   }
   static async cadastroUsuario(obj) {
