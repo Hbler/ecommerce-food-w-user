@@ -1,15 +1,9 @@
 # Planejamento E-Commerce - Capstone
 
 ## Ferramentas
-<<<<<<< HEAD
 - Versionamento: GitFlow
 - Organização: Trello
 - Padrão de código: Prettier (Extensão VScode) / CamelCase (JavaScript) / BEM (CSS) / Português
-=======
-- Versionamento: GitFlow
-- Organização: Trello
-- Padrão de código: Prettier (Extensão VScode) / CamelCase (JavaScript) / BEM (CSS) / Português
->>>>>>> develop
 
 ## Fluxograma
 > Página Inicial:
@@ -36,30 +30,6 @@
 ## Ordem de desenvolviemnto:
 - Estrutura
   - **Página Inicial** -> Mobile First (CSS)
-<<<<<<< HEAD
-    - Layout 
-      - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
-    - Modais de Cadastro e Login 
-      - DOM + CSS + JavaScript
-      - Não depende do layout pois serão ativados com um botão
-    - Funcionalidades Vitrine
-      - DOM + CSS + JavaScript + API
-      Não depende do layout, serão ”apendados” (rs) num node HTML
-    - Funcionalidades Carrinho
-      - DOM + CSS + JavaScript + LocalStorage / API (-> Extra: Requisições Cart)
-      - Depende do layout e da vitrine apenas para testes de adicionar e remover, que podem ser simulados
-    - Funcionalidade Pesquisa
-      - JavaScript / API (-> Extra: Filtrar produtos do usuário)
-      - Depende de layout e vitrine
-  - **Dashboard** -> Mobile First (CSS)
-    - Layout
-      - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
-    - Listar produtos do usuário
-      - DOM + CSS + JavaScript + API
-    - Funcionalidade cadastrar produtos
-      - DOM + CSS + JavaScript + API
-    - Modal de edição
-=======
     - Layout - branch: feature/layout-home
       - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
     - Modais de Cadastro e Login - branch: feature/login-cadastro
@@ -82,14 +52,10 @@
     - Funcionalidade cadastrar produtos - branch: feature/novo-produto
       - DOM + CSS + JavaScript + API
     - Modal de edição - branch: feature/editar-produto
->>>>>>> develop
       - DOM + CSS + JavaScript + API (para o botão de enviar)
       - Depende de “Listar Produtos do Usuário”
 
 > Modelos:
-<<<<<<< HEAD
-- **Product** - Cada instancia tem:
-=======
 - **Product** - Cada instancia tem:
 >>>>>>> develop
   - Atributos
