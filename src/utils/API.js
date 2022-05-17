@@ -1,5 +1,4 @@
 class API {
-  static token = "";
   static base_URL = "https://api-kenzie-food.herokuapp.com";
 
   static async loginUsuario(obj) {
@@ -43,7 +42,7 @@ class API {
   }
 
   static async produtosTodos() {
-    const url = API.base_URL + "/produtcs";
+    const url = API.base_URL + "/products";
 
     const res = await fetch(url, {
       method: "GET",
@@ -58,7 +57,7 @@ class API {
     return res;
   }
   static async produtosUsurario() {
-    const url = API.base_URL + "/my/produtcs";
+    const url = API.base_URL + "/my/products";
 
     const res = await fetch(url, {
       method: "GET",
@@ -76,7 +75,7 @@ class API {
     return res;
   }
   static async produtosNovo(obj) {
-    const url = API.base_URL + "/my/produtcs";
+    const url = API.base_URL + "/my/products";
 
     const res = await fetch(url, {
       method: "POST",
@@ -96,7 +95,7 @@ class API {
     return res;
   }
   static async produtosApagar(id) {
-    const url = API.base_URL + "/my/produtcs/" + id;
+    const url = API.base_URL + "/my/products/" + id;
 
     const res = await fetch(url, {
       method: "DELETE",
@@ -114,7 +113,7 @@ class API {
     return res;
   }
   static async produtosEditar(id, obj) {
-    const url = API.base_URL + "/my/produtcs/" + id;
+    const url = API.base_URL + "/my/products/" + id;
 
     const res = await fetch(url, {
       method: "POST",
