@@ -5,3 +5,28 @@
 @import "./cards_vitrine.css";
 @import "./cards_carrinho.css";
 @import "./cards_dashboard.css";
+
+#filtros {
+  padding: 1%;
+  width: 100%;
+}
+#filtros ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#filtros ul li {
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+#vitrine {
+  width: 90vw;
+  margin: 1% auto;
+  display: flex;
+  flex-wrap: wrap;
+}
