@@ -1,6 +1,5 @@
 import {login, pegarDados} from "./ControllerUser.js"
 
-
 class FormController {
     static handleSubmit(form) {
         const info = {...form};
@@ -15,9 +14,9 @@ class FormController {
         });
     } 
     
-    
-    static loginForm(){
+    static loginForm() {
         const body = document.querySelector("body");
+        body.innerHTML = "";
 
         const main = document.createElement("main");
         const title = document.createElement("h1");
@@ -27,10 +26,18 @@ class FormController {
         const password = document.createElement("input");
         const loginBtn = document.createElement("button");
         const p2 = document.createElement("p");
+        const fechar = document.createElement("p");
         const a = document.createElement("a");
+
+        fechar.classList.add("cancelar");
+        fechar.addEventListener("click", () => {
+            body.removeChild(main);
+        });
 
         title.innerText = "Login";
         p1.innerText = "Faça seu login e boas compras!";
+        fechar.innerText = "X";
+        fechar.id = "fechar";
 
         email.name = "email";
         email.type = "email";
@@ -40,36 +47,52 @@ class FormController {
         password.type = "password";
         password.placeholder = "Senha";
 
-        loginBtn.value = "Entrar";
+        loginBtn.innerText = "Entrar";
         loginBtn.type = "submit";
         loginBtn.id = "botaoLogin";
 
-        p2.innerText = "Caso não tenha um cadastro:";
-        a.innerHTML = `"<a href="./index.html">Cadastre-se</a">`;
+        p2.innerText = "Ainda não tem um cadastro?";
+        a.innerText = "Cadastre-se";
+
+        a.addEventListener("click", () => {
+            body.removeChild(main);
+            FormController.cadastroForm();
+        })
 
         body.addEventListener("submit", login);
 
-        body.append(main);
-        main.append(title, p1, form, p2, a);
-        form.append(email, password, loginBtn);
+        body.appendChild(main);
+        main.appendChild(title);
+        main.appendChild(p1);
+        main.appendChild(form);
+        main.appendChild(p2);
+        main.appendChild(fechar);
+        main.appendChild(a);
+        form.appendChild(email);
+        form.appendChild(password);
+        form.appendChild(loginBtn);
+
+        form.addEventListener("submit", login);
 
         return body;
     }
 
-
-    static cadastroForm(){
+    static cadastroForm() {
         const body = document.querySelector("body");
 
         const main = document.createElement("main");
         const title = document.createElement("h1");
+        const fechar = document.createElement("p");
         const form = document.createElement("form");
         const name = document.createElement("input");
         const email = document.createElement("input");
         const password = document.createElement("input");
-        const loginBtn = document.createElement("button");
+        const cadastroBtn = document.createElement("button");
 
         title.innerText = "Cadastre-se";
-
+        fechar.innerText = "X";
+        fechar.id = "fechar";
+        
         name.name = "name";
         name.type = "text";
         name.placeholder = "Nome de Usuário";  
@@ -82,15 +105,22 @@ class FormController {
         password.type = "password";
         password.placeholder = "Senha";
 
-        loginBtn.value = "Cadastrar";
-        loginBtn.type = "submit";
-        loginBtn.id = "botaoCadastrar";
+        cadastroBtn.innerText = "Cadastrar";
+        cadastroBtn.type = "submit";
+        cadastroBtn.id = "botaoCadastrar";
+
+        fechar.classList.add("cancelar");
+        fechar.addEventListener("click", () => {
+            body.removeChild(main);
+        });
 
         body.addEventListener("submit", pegarDados);
 
         body.append(main);
-        main.append(title, form);
-        form.append(name, email, password, loginBtn);
+        main.append(title, fechar, form);
+        form.append(name, email, password, cadastroBtn);
+
+        form.addEventListener("submit", pegarDados);
 
         return body;
     }

@@ -1,7 +1,5 @@
 import API from "../utils/API.js"
 
-const formCadastro = document.getElementById("formularioCadastro");
-
 function pegarDados (event) {
     event.preventDefault();
     const input = event.target;
@@ -17,12 +15,6 @@ function pegarDados (event) {
     
     return API.cadastroUsuario(dados);
 }
-
-formCadastro.addEventListener("submit", pegarDados);
-
-
-
-const formLogin = document.getElementById("formularioLogin");
 
 async function login (event) {
     
@@ -41,4 +33,4 @@ async function login (event) {
     return await API.loginUsuario(dados);
 }
 
-formLogin.addEventListener("submit", login);
+export {login, pegarDados};

@@ -24,6 +24,19 @@ h1 {
     color:  #FF2253;
 }
 
+#fechar {
+    position: absolute;
+    margin-left: 560px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #FF2253;
+}
+
+#fechar:hover {
+    COLOR: #F8F9FA;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -133,4 +146,12 @@ button {
         margin: 0 auto;
         margin-top: 10px;
     }
+}
+
+@media screen and (min-width: 700px) {
+    
+}
+
+@media screen and (min-width: 1000px) {
+    
 }
