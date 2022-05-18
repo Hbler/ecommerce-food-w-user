@@ -1,3 +1,4 @@
+import ControllerCarrinho from "../controllers/ControllerCarrinho.js";
 class Produto {
   constructor(id, nome, preco, categoria, descricao, imagem) {
     this.id = id;
@@ -78,11 +79,11 @@ class Produto {
     botao.innerHTML = '<i class="fa-solid fa-cart-arrow-down"></i>';
     botao.id = this.id;
     botao.classList.add("card__botao");
-    //   botao.addEventListener('click', adicionarCarrinho)
+    botao.addEventListener("click", ControllerCarrinho.adicionar);
     return botao;
   }
 
-  cardCarrinho(qtt = 1) {
+  cardCarrinho(qtd = 1) {
     const card = document.createElement("article");
     const moldura = document.createElement("figure");
     const info = document.createElement("div");
@@ -91,7 +92,7 @@ class Produto {
     const preco = this.formatarPreco();
     const interacao = document.createElement("div");
     const botaoRemover = this.botaoRemoverCarrinho();
-    const quantidade = this.inputQuantidade(qtt);
+    const quantidade = this.inputQuantidade(qtd);
 
     moldura.style.backgroundImage = `url(${this.imagem})`;
     moldura.classList.add("card__moldura--carrinho");
@@ -121,7 +122,7 @@ class Produto {
     botao.innerHTML = '<i class="fa-solid fa-trash"></i>';
     botao.id = this.id;
     botao.classList.add("card__botao--carrinho");
-    //   botao.addEventListener('click', removerCarrinho)
+    botao.addEventListener("click", ControllerCarrinho.remover);
 
     return botao;
   }
@@ -133,7 +134,8 @@ class Produto {
     input.value = String(num);
     input.min = "1";
     input.classList.add("card__input--carrinho");
-    // input.addEventListener('change', atualizarCarrinho)
+    input.dataset.id = this.id;
+    input.addEventListener("change", ControllerCarrinho.quantidadeProduto);
 
     return input;
   }

@@ -6,8 +6,23 @@
 @import "./cards_carrinho.css";
 @import "./cards_dashboard.css";
 
+body {
+  display: flex;
+}
+
+#vitrine {
+  width: 70vw;
+  height: 90vh;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  border: 1px solid purple;
+}
+
 #carrinho {
-  width: 30vw;
+  width: 25vw;
   height: 60vh;
   margin: 2% auto;
   display: flex;
