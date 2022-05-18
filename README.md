@@ -1,158 +1,110 @@
+# Planejamento E-Commerce - Capstone
+
+## Ferramentas
+- Versionamento: GitFlow
+- Organização: Trello
+- Padrão de código: Prettier (Extensão VScode) / CamelCase (JavaScript) / BEM (CSS) / Português
+
+## Fluxograma
+> Página Inicial:
+- Modais p/ cadastro e login
+- Pesquisa produto
+  - utilizando campo de busca
+    - por nome / categora 
+  - clicando em tags
+    - categoria
+- Vitrine
+  - cards com foto, nome, descrição, categoria (em forma de tag que ativa o filtro), preço, botão adiconar ao carrinho
+  - mouse sobre o porduto -> efeito hover
+- Carrinho
+  - lista de produtos
+    - cards com foto, nome, categoria, preço, botão remover, input de quantidade
+  - preço totoal
+
+> Dashboard:
+- Lista de produtos do usuário c/ botão de editar
+  - card similar ao carrinho
+- Campo de registro de novo produto c/ botão de cadastrar
+- Modal de edição
+
+## Ordem de desenvolviemnto:
+- Estrutura
+  - **Página Inicial** -> Mobile First (CSS)
+    - Layout - branch: feature/layout-home
+      - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
+    - Modais de Cadastro e Login - branch: feature/login-cadastro
+      - DOM + CSS + JavaScript
+      - Não depende do layout pois serão ativados com um botão
+    - Funcionalidades Vitrine - branch: feature/vitrine
+      - DOM + CSS + JavaScript + API
+      Não depende do layout, serão ”apendados” (rs) num node HTML
+    - Funcionalidades Carrinho - branch: feature/carrinho
+      - DOM + CSS + JavaScript + LocalStorage / API (-> Extra: Requisições Cart)
+      - Depende do layout e da vitrine apenas para testes de adicionar e remover, que podem ser simulados
+    - Funcionalidade Pesquisa - branch: feature/pesquisa-filtro
+      - JavaScript / API (-> Extra: Filtrar produtos do usuário)
+      - Depende de layout e vitrine
+  - **Dashboard** -> Mobile First (CSS)
+    - Layout - branch: feature/layout-dashboard
+      - HTML + CSS (Apenas página com elementos mas sem funcionalidade)
+    - Listar produtos do usuário - branch: feature/produtos-usuario
+      - DOM + CSS + JavaScript + API
+    - Funcionalidade cadastrar produtos - branch: feature/novo-produto
+      - DOM + CSS + JavaScript + API
+    - Modal de edição - branch: feature/editar-produto
+      - DOM + CSS + JavaScript + API (para o botão de enviar)
+      - Depende de “Listar Produtos do Usuário”
+
+> Modelos:
+- **Product** - Cada instancia tem:
+>>>>>>> develop
+  - Atributos
+    - ID 
+    - Nome 
+    - Preço 
+    - Descrição 
+    - Categoria
+    - Fonte da imagem
+  - Métodos
+    - Retornar um card pronto
+    - Outros métodos necessários para distribuir a a criação dos cards
+
+> Controllers (Classes Estáticas):
+- Vitrine / "Vitrine" da dashboard
+- Carrinho
+- Filtros
+- Cadastro/Edição de Produtos
 
 
-# API-KenzieFood
+## Estrutura de Arquivos
+> Root
+- **index**.html
+- **README**.md
+- **Planejamento**.md
+> SRC
+- > Controllers
+  - **ControllerVitrine**.js
+  - **ControllerCarrinho**.js
+  - **ControllerFiltros**.js
+  - **ControllerCadastroProdutos**.js
+- > Models
+  - **Produto**.js
+- > Util
+  - **API**.js
+- > Styles
+  - **style**.css 
+    - importa os demais, onde estão as configs globais (estilos dos botões por exemplo)
+  - **layout**.css 
+    - estilos de layout iniciando pelo mobile, e “subindo” para outros tamanhos de tela
+  - **dashboard**.css 
+    - estilos da dashboar iniciando pelo mobile, e “subindo” para outros tamanhos de tela
+  - **cards_vitrine**.css 
+    - estilos dos cards iniciando pelo mobile, e “subindo” para outros tamanhos de tela
+  - **cards_carrinho**.css 
+    - estilos dos cards do carrinho iniciando pelo mobile, e “subindo” para outros tamanhos de tela
+  - **cards_dasbhoard**.css 
+    - estilos dos cards do dasboard iniciando pelo mobile, e “subindo” para outros tamanhos de tela
+  - **modal**.css 
+    - estilos dos três modais (cadastro, login, edição do produto cadastrado) iniciando pelo mobile, e “subindo” para outros tamanhos de tela
 
-Nesse trabalho vocês terão que consumir uma API de produtos.
-
-## Rotas
-
-### Get `/product`
-
-### Resposta: Status 200
-
-```json
-
-```
----
-
-### Get `/product/:id`
-
-### Regras:
-Passar id do produto específico na url.
-
-
-### Resposta: Status 200
-
-```json
-{
-	"id": 5,
-	"nome": "Panqueca de banana com aveia",
-	"preco": 20,
-	"categoria": "Panificadora",
-	"imagem": "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/panqueca.png",
-	"createdAt": "2022-01-24T13:20:24.211Z",
-	"updatedAt": "2022-01-24T13:20:24.211Z"
-}
-
-```
---- 
-## Rotas extras
-Em todas as rotas extras são autenticadas, por isso, é necessário enviar no header o token da sua respectiva equipe. Exemplo:
-
-```javascript
-fetch("https:urlDaApi", { headers : {Authorization: "Bearer tokenDaSuaEquipe"}} )
-```
----
-
-### Get `/my/product`
-### Regras:
-Essa rota retorna todos os produtos que foram criados utilizando o token de sua equipe. Exemplo?
-
-### Resposta: Status 200
-```json
-[
-	{
-		"id": 3,
-		"nome": "Bolinho",
-		"preco": 5,
-		"categoria": "Doce",
-		"imagem": "https://picsum.photos/200/300",
-		"createdAt": "2022-01-24T14:29:37.680Z",
-		"updatedAt": "2022-01-24T14:29:37.680Z"
-	},
-	{
-		"id": 4,
-		"nome": "Temaki",
-		"preco": 5,
-		"categoria": "Comida Japonesa",
-		"imagem": "https://picsum.photos/200/300",
-		"createdAt": "2022-01-24T14:36:34.045Z",
-		"updatedAt": "2022-01-24T14:41:38.740Z"
-	}
-]
-```
----
-
-### Get `/my/product/:id`
-### Regras:
-Passar id do produto específico na url.
-### Resposta: Status 200
-```json
-{
-	"id": 3,
-	"nome": "Bolinho",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300",
-	"createdAt": "2022-01-24T14:29:37.680Z",
-	"updatedAt": "2022-01-24T14:29:37.680Z"
-}
-```
----
-
-### Post `/my/product`
-### Regras:
-- `nome` e `categoria`: precisam ser strings.
-- `preco`: deve ser um número positivo.
-- `imagem`: deve ser a url de alguma imagem.
-
-```json
-{
-	"nome": "Bolinho",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300"
-}
-```
-### Resposta: Status 201 Created
-```json
-{
-	"id": 4,
-	"user_id": 2,
-	"nome": "Bolinho",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300",
-	"ip_user": "143.208.126.11",
-	"updatedAt": "2022-01-24T14:36:34.045Z",
-	"createdAt": "2022-01-24T14:36:34.045Z"
-}
-```
----
-
-### Patch `/my/product/:id`
-### Regras:
-- `nome` e `categoria`: precisam ser strings.
-- `preco`: deve ser um número positivo.
-- `imagem`: deve ser a url de alguma imagem.
-- Passar id do produto específico na url.
-
-### Requisição:
-Enviar um JSON com pelo menos uma das informações do produto a ser alterada, exemplo:
-
-```json
-{
-	"nome" : "Temaki"
-}
-```
-
-### Resposta: Status 202 Accepted
-```json
-{
-	"id": 4,
-	"nome": "Temaki",
-	"preco": 5,
-	"categoria": "Doce",
-	"imagem": "https://picsum.photos/200/300",
-	"createdAt": "2022-01-24T13:51:16.525Z",
-	"updatedAt": "2022-01-24T14:30:20.104Z"
-}
-```
----
-
-### Delete `/my/product/:id`
-### Regras:
-Passar id do produto específico na url.
-Essa rota não precisa de um body, apenas do id na url.
-### Resposta: Status 204 No Content
 
