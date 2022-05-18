@@ -5,3 +5,13 @@
 @import "./cards_vitrine.css";
 @import "./cards_carrinho.css";
 @import "./cards_dashboard.css";
+
+#carrinho {
+  width: 30vw;
+  height: 60vh;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border: 1px solid violet;
+}
