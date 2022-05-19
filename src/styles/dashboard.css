@@ -41,7 +41,7 @@
         border: none;
         height: 1rem;
         width: 3rem;
-        top: 0.9rem;
+        top: 1.5rem;
         left: -8rem;
         position: relative;
         z-index: -1;
@@ -54,6 +54,7 @@
     }
     .iconeAvatar {
         padding-left: 4rem;
+        padding-bottom: 2.5rem;
     }
     .menuHeader {
         margin-left: 1rem;
@@ -138,7 +139,10 @@
 
 @media (min-width: 700px) {
     nav {
-        height: 20%;
+        height: 15%;
+    }
+    .navSemLogo {
+        height: 10%;
     }
     #primeiroNome {
         padding-left: 1rem;
