@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/layout.css" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
     <title>Kenzie Food</title>
   </head>
 
@@ -13,12 +13,16 @@
     <header class="cabecalho">
       <h1 class="titulo">Kenzie<span>Food</span></h1>
 
-      <button class="usuario"></button>
-      <input
-        class="pesquisa"
-        type="text"
-        placeholder="Pesquisar por produtos"
-      />
+      <button class="usuario"><i class="fa-solid fa-user"></i></button>
+      <div class="pesquisa__moldura">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          class="pesquisa"
+          type="text"
+          name="pesquisa"
+          placeholder="Pesquisar por produtos"
+        />
+      </div>
     </header>
 
     <main>
@@ -26,9 +30,11 @@
       <section class="vitrine"></section>
 
       <aside class="carrinho">
-        <h3 class="carrinho__titulo">Carrinho</h3>
+        <h3 class="carrinho__titulo">
+          <i class="fa-solid fa-cart-arrow-down"></i>Carrinho
+        </h3>
 
-        <section id="carrinho_produtos"></section>
+        <section id="carrinho__produtos"></section>
       </aside>
     </main>
 
