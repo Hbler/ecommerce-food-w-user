@@ -4,9 +4,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/cards_dashboard.css" />
+    <title>Dashboard</title>
   </head>
   <body>
+    <nav>
+      
+      <section class="logo">
+        <p id="primeiroNome">Kenzie<p id="segundoNome">Food</p></p>
+      </section>
+
+      <section class="navSemLogo">
+
+        <section class="barraPesquisa">
+          <i class="fa-solid fa-magnifying-glass" id="lupa"></i>
+          <input class="barra" type="text" placeholder="       Pesquisar" />
+        </section>
+  
+        <section class="iconeAvatar">
+          <img src="" alt="nome">
+        </section>
+
+      </section>
+      
+    </nav>
+
+    <header>
+
+      <aside class="menuHeader">
+
+        <section class="filterMenuHeader">
+          <ul class="ul">
+            <li class="filtro" id="todos">Todos</li>
+            <li class="filtro" id="panificadora">Panificadora</li>
+            <li class="filtro" id="frutas">Frutas</li>
+            <li class="filtro" id="bebidas">Bebidas</li>
+          </ul>
+        </section>
+
+        <section class="adicionarItem">
+          <button class="botaoAdicionarItem">Adicionar novo produto</button>
+        </section>
+
+      </aside>
+
+    </header>
+
+    <aside>
+      <section  class="descricao">
+        <p>Produto</p> <p>Categorias</p> <p>Descrição</p> <p>Ações</p>
+      </section>
+      <ul id="listaDeProdutos"></ul>
+
+      <section class="notificacao">
+          <span></span>
+      </section>
+
+
     <script src="../script.js"></script>
+    <script src="https://kit.fontawesome.com/8fa2904e7b.js" crossorigin="anonymous"></script>
   </body>
 </html>
