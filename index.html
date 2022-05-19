@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-BR">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>Kenzie Food</title>
   </head>
+
   <body>
+
+    <header class="barra_Principal">
+      <section class="titulo">
+        <h1 class="titulo_Kenzie">Kenzie<span class="titulo_Food">Food</span></h1>
+        <input class="barra_Pesquisa"type="text" placeholder="Pesquisar por produtos">
+      </section>
+      <button class="botao_Login"></button>
+    </header>
+
+    <main>
+
+    <section class="conteudo_Principal">
+
+      <nav class="barra_Navegacao_Filtros">
+
+        <ul class="botoes_Filtros">
+          <li class="filtros filtro_Todos filtro_Clicado">Todos</li>
+          <li class="filtros filtro_Panificadora">Panificadora</li>
+          <li class="filtros filtro_Frutas">Frutas</li>
+          <li class="filtros filtro_Bebidas">Bebidas</li>
+        </ul>
+        
+      </nav>  
+
+      <section id="container_Produtos">
+
+        <!--GERADO VIA DOM-->
+
+        <div class="card_Produto">
+          <img class="imagem_Produto"src="https://img.cybercook.com.br/imagens/receitas/323/panqueca-1.jpg" alt="">
+          <h4 class="nome_Produto">Panqueca de banana com aveia</h5>
+          <p class="descricao_Produto">Esta receita serve muito bem 2 pessoas, deixa a gente bem satisfeito, se não tiver outra opção de café. Se tiver mais comida, como pães e frutas.</p>
+          <p class="categoria_Produto">Panificadora</p>
+          <p class="preco_Produto">R$ 20,00<button class="botao_Comprar"></button></p>
+        </div>
+
+      </section>
+      
+    </section>
+
+    <aside class="container_Carrinho_Produtos">
+
+      <h3 class="titulo_Carrinho">Carrinho</h3>
+
+      <section id="carrinho_Produtos">
+
+        <!--GERADO VIA DOM-->
+
+        <section class="produto_Carrinho">
+          <figure class="imagem_Produto_Carrinho">
+            <img class="imagem_No_Carrinho"src="https://img.cybercook.com.br/imagens/receitas/323/panqueca-1.jpg" alt="">
+          </figure>
+          <section class="conteiner_Info_Produto">
+            <h4 class="nome_Produto_Carrinho">Panqueca de banana com aveia</h5>
+            <p class="categoria_Produto_Carrinho">Panificadora</p>
+            <p class="preco_Produto_Carrinho">R$ 20,00</p>
+          </section>
+        </section>
+
+      </section>
+    </aside>
+
+  </main>
+
     <script src="./src/script.js" type="module"></script>
   </body>
 </html>
