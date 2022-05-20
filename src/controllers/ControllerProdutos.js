@@ -1,5 +1,6 @@
 import API from "../utils/API.js";
 import ControllerFormulario from "./ControllerFormulario.js";
+import ControllerUsuario from "./ControllerUsuario.js";
 
 class ControllerProdutos {
   static async enviar(formulario, tipo, id) {
@@ -30,13 +31,13 @@ class ControllerProdutos {
     }
 
     if (resposta.id || resposta === "Produto Atualizado") {
-      ControllerProdutos.modalTemporario("Operação realizada com sucesso!");
+      ControllerUsuario.modalTemporario("Operação realizada com sucesso!");
     } else if (resposta.error) {
-      ControllerProdutos.modalTemporario(
+      ControllerUsuario.modalTemporario(
         "Erro! Todos os campos são obrigatórios."
       );
     } else if (resposta.msg) {
-      ControllerProdutos.modalTemporario("Erro! Tente Novamente.");
+      ControllerUsuario.modalTemporario("Erro! Tente Novamente.");
     }
   }
 
@@ -100,27 +101,6 @@ class ControllerProdutos {
 
     fundo.appendChild(confirmar);
     fundo.classList.add("modal__fundo");
-
-    body.appendChild(fundo);
-  }
-
-  static modalTemporario(str) {
-    const body = document.body;
-    const fundo = document.createElement("section");
-    const modal = document.createElement("div");
-    const mensagem = document.createElement("p");
-
-    mensagem.innerText = str;
-
-    modal.appendChild(mensagem);
-    modal.classList.add("modal__temporario");
-
-    fundo.appendChild(modal);
-    fundo.classList.add("modal__fundo");
-
-    setTimeout(() => {
-      body.removeChild(fundo);
-    }, 3000);
 
     body.appendChild(fundo);
   }

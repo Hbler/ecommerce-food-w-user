@@ -11,6 +11,62 @@
   backdrop-filter: blur(4px);
 }
 
+.modal__formulario {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ff2253;
+  position: absolute;
+}
+
+.modal__formulario input {
+  margin: 5% 0;
+  padding: 4%;
+  border: none;
+  border-radius: 20px;
+  color: #868e96;
+  background-color: #e9ecef;
+}
+
+.modal__formulario input:focus {
+  color: #000;
+  outline: 2px solid #000;
+  background-color: #f8f9fa;
+}
+
+.modal__formulario input[type="submit"] {
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.modal__formulario input[type="submit"]:hover {
+  color: #ff2253;
+}
+
+.modal__mensagem,
+.modal__cadastrar {
+  margin: 1% 0;
+  color: #e9ecef;
+  text-align: center;
+}
+
+.modal__cadastrar {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.modal__cadastrar:hover span {
+  color: #000;
+  text-decoration: underline;
+}
+
 .modal--dashboard {
   width: 90vw;
   display: flex;
@@ -29,6 +85,18 @@
 }
 
 .modal__fechar {
+  top: 20%;
+  right: 11%;
+  color: #fff;
+  position: absolute;
+  cursor: pointer;
+}
+
+.modal__fechar:hover {
+  color: #000;
+}
+
+.modal__fechar--dashboard {
   top: 25%;
   right: 5%;
   height: 50%;
@@ -44,19 +112,25 @@
   border: 1px solid transparent;
 }
 
-.modal__fechar:hover {
+.modal__fechar--dashboard:hover {
   border: 1px solid #ff2253;
 }
 
-.modal__fechar i {
+.modal__fechar--dashboard i {
   color: #868e96;
 }
 
-.modal__fechar:hover i {
+.modal__fechar--dashboard:hover i {
   color: #ff2253;
 }
 
 .modal__titulo {
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.modal__titulo--dashboard {
   font-size: 0.9rem;
 }
 
@@ -136,11 +210,23 @@
   width: fit-content;
   height: fit-content;
   padding: 5%;
-  background-color: #fff;
+  text-align: center;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 @media (min-width: 700px) {
+  .modal__formulario {
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal__mensagem {
+    font-size: 0.9rem;
+  }
+
   .modal--dashboard {
     width: 80vw;
     height: 90vh;
@@ -152,10 +238,14 @@
     height: fit-content;
   }
 
-  .modal__fechar {
+  .modal__fechar--dashboard {
     top: 30%;
     height: 40%;
     width: 5%;
+  }
+
+  .modal__titulo {
+    font-size: 2rem;
   }
 
   .modal__linha input[type="submit"],
@@ -165,6 +255,14 @@
 }
 
 @media (min-width: 1000px) {
+  .modal__formulario {
+    top: 50%;
+    left: 50%;
+    width: 30vw;
+    padding: 0 3%;
+    transform: translate(-50%, -50%);
+  }
+
   .modal--dashboard {
     width: 40vw;
     max-width: 410px;
@@ -173,7 +271,7 @@
     border-radius: 10px;
   }
 
-  .modal__fechar {
+  .modal__fechar--dashboard {
     top: 25%;
     width: 7%;
     height: 50%;

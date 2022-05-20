@@ -1,6 +1,6 @@
 import API from "../utils/API.js";
 import ControllerProdutos from "./ControllerProdutos.js";
-import { login, pegarDados } from "./ControllerUsuario.js";
+import ControllerUsuario from "./ControllerUsuario.js";
 
 class ControllerFormulario {
   static formularioLogin() {
@@ -13,13 +13,13 @@ class ControllerFormulario {
     const mensagem = document.createElement("p");
     const email = document.createElement("input");
     const senha = document.createElement("input");
-    const botaoLogin = document.createElement("submit");
+    const botaoLogin = document.createElement("input");
     const cadastrar = document.createElement("p");
 
     titulo.innerText = "Login";
     titulo.classList.add("modal__titulo");
 
-    fechar.classList.add("fechar", "fa-xmark", "fa-solid");
+    fechar.classList.add("modal__fechar", "fa-xmark", "fa-solid");
     fechar.addEventListener("click", () => {
       body.removeChild(fundo);
     });
@@ -42,16 +42,18 @@ class ControllerFormulario {
 
     cadastrar.innerHTML =
       "Ainda não tem um cadastro?\n<span>Clique aqui!</span>";
-    cadastrar.classList.add("cadastrar");
+    cadastrar.classList.add("modal__cadastrar");
 
     cadastrar.addEventListener("click", () => {
       body.removeChild(fundo);
       ControllerFormulario.formularioCadastro();
     });
 
-    modal.addEventListener("submit", login);
+    modal.classList.add("modal__formulario");
+    modal.addEventListener("submit", ControllerUsuario.login);
     modal.append(titulo, fechar, mensagem, email, senha, botaoLogin, cadastrar);
 
+    fundo.classList.add("modal__fundo");
     fundo.appendChild(modal);
     body.appendChild(fundo);
   }
@@ -66,12 +68,12 @@ class ControllerFormulario {
     const nome = document.createElement("input");
     const email = document.createElement("input");
     const senha = document.createElement("input");
-    const botaoCadastrar = document.createElement("submit");
+    const botaoCadastrar = document.createElement("input");
 
     titulo.innerText = "Cadastre-se";
     titulo.classList.add("modal__titulo");
 
-    fechar.classList.add("fechar", "fa-xmark", "fa-solid");
+    fechar.classList.add("modal__fechar", "fa-xmark", "fa-solid");
     fechar.addEventListener("click", () => {
       body.removeChild(fundo);
     });
@@ -90,12 +92,17 @@ class ControllerFormulario {
     senha.type = "password";
     senha.placeholder = "Senha";
 
-    botaoCadastrar.innerText = "Cadastrar";
+    botaoCadastrar.value = "Cadastrar";
     botaoCadastrar.type = "submit";
 
-    modal.addEventListener("submit", pegarDados);
+    modal.classList.add("modal__formulario");
+    modal.addEventListener("submit", () => {
+      body.removeChild(fundo);
+      ControllerUsuario.pegarDados();
+    });
     modal.append(titulo, fechar, nome, email, senha, botaoCadastrar);
 
+    fundo.classList.add("modal__fundo");
     fundo.appendChild(modal);
     body.appendChild(fundo);
   }
@@ -120,7 +127,7 @@ class ControllerFormulario {
     const interacao = ControllerFormulario.interacao(tipo, item);
 
     fechar.innerHTML = '<i class="fa-solid fa-x"></i>';
-    fechar.classList.add("modal__fechar");
+    fechar.classList.add("modal__fechar--dashboard");
     fechar.addEventListener("click", (e) => {
       e.preventDefault();
       body.removeChild(fundo);
@@ -128,7 +135,7 @@ class ControllerFormulario {
 
     if (tipo === "cadastrar") titulo.innerText = "Cadastro de Produto";
     else titulo.innerText = "Edição de produto";
-    titulo.classList.add("modal__titulo");
+    titulo.classList.add("modal__titulo--dashboard");
 
     topo.append(titulo, fechar);
     topo.classList.add("modal__topo");
