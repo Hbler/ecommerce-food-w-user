@@ -31,6 +31,7 @@ class ControllerFiltros {
       li.innerText = str.slice(0, 1).toUpperCase() + str.slice(1);
       li.addEventListener("click", this.filtrar);
       li.classList.add("filtros__categoria");
+      if (str === "todos") li.classList.add("ativo");
 
       lista.appendChild(li);
     });

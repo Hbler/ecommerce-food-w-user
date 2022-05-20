@@ -4,7 +4,7 @@ class ControllerCarrinho {
   static async mostrarProdutos() {
     const produtos = await API.produtosTodos();
 
-    const nodePai = document.getElementById("carrinho");
+    const nodePai = document.querySelector(".carrinho__produtos");
     nodePai.innerHTML = "";
 
     const carrinhoLocal = JSON.parse(localStorage.getItem("carrinho"));
@@ -115,6 +115,42 @@ class ControllerCarrinho {
     }
 
     localStorage.setItem("resumo", JSON.stringify(resumo));
+
+    const quantidade = document.getElementById("quantidade");
+    const valor = document.getElementById("valor");
+
+    quantidade.innerHTML = "";
+    valor.innerHTML = "";
+
+    quantidade.innerText = resumo.quantidade;
+    valor.innerText = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(resumo.valorTotal);
+
+    const nodeResumo = document.querySelector(".carrinho__resumo");
+    if (resumo.quantidade === 0) {
+      if (!nodeResumo.classList.contains("vazio"))
+        nodeResumo.classList.add("vazio");
+    } else {
+      nodeResumo.classList.remove("vazio");
+    }
+
+    const carrinho = document.querySelector(".carrinho__produtos");
+    if (carrinho.innerHTML === "") {
+      const div = document.createElement("div");
+      const icone = document.createElement("i");
+      const mensagem = document.createElement("p");
+
+      icone.classList.add("fa-solid", "fa-basket-shopping");
+
+      mensagem.innerText = "Por enquanto não temos produtos no carrinho";
+
+      div.append(icone, mensagem);
+      div.classList.add("carrinho__vazio");
+
+      carrinho.appendChild(div);
+    }
   }
 }
 

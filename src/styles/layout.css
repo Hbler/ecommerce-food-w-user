@@ -129,6 +129,27 @@
   margin-right: 5%;
 }
 
+.carrinho__vazio {
+  width: 100%;
+  height: 100%;
+  padding: 7%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #868e96;
+  background-color: #f8f9fa;
+}
+
+.carrinho__vazio i {
+  font-size: 2rem;
+  margin-bottom: 5%;
+}
+
+.carrinho__vazio p {
+  text-align: center;
+}
+
 @media (min-width: 700px) {
   .cabecalho {
     height: 20vh;
@@ -222,7 +243,6 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    border: 1px solid salmon;
   }
 
   .carrinho__titulo {
@@ -242,7 +262,7 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    border: 1px solid red;
+    border-radius: 0 0 10px 10px;
   }
 
   .carrinho__resumo {
@@ -250,7 +270,10 @@
     height: 22%;
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+  }
+
+  .carrinho__resumo.vazio {
+    display: none;
   }
 
   .carrinho__resumo div {
