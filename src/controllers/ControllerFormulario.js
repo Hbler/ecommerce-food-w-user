@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import API from "../utils/API.js";
 import ControllerProdutos from "./ControllerProdutos.js";
 import { login, pegarDados } from "./ControllerUsuario.js";
@@ -309,7 +308,6 @@ class ControllerFormulario {
 
     div.classList.add("modal__linha");
     return div;
->>>>>>> feature/editar-produto
   }
 }
 
