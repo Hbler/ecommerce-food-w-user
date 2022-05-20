@@ -1,5 +1,6 @@
 import ControllerFiltros from "../controllers/ControllerFiltros.js";
 import ControllerCarrinho from "../controllers/ControllerCarrinho.js";
+import ControllerProdutos from "../controllers/ControllerProdutos.js";
 
 class Produto {
   constructor(id, nome, preco, categoria, descricao, imagem) {
@@ -140,6 +141,53 @@ class Produto {
     input.addEventListener("change", ControllerCarrinho.quantidadeProduto);
 
     return input;
+  }
+
+  cardDashboard() {
+    const card = document.createElement("li");
+    const moldura = document.createElement("figure");
+    const nome = document.createElement("p");
+    const descricao = document.createElement("p");
+    const tagCategoria = this.nodeCategoria();
+    const interacao = this.botoesDashboard();
+
+    moldura.style.backgroundImage = `url(${this.imagem})`;
+    moldura.classList.add("card__moldura--dashboard");
+
+    nome.innerText = this.nome;
+    nome.classList.add("card__nome--dashboard");
+
+    descricao.innerText = this.descricao;
+    descricao.classList.add("card__descricao", "card__descricao--dashboard");
+
+    tagCategoria.classList.add("card__tag--dashboard");
+
+    card.append(moldura, nome, descricao, tagCategoria, interacao);
+    card.classList.add("card--dashboard");
+    card.dataset.id = this.id;
+
+    return card;
+  }
+
+  botoesDashboard() {
+    const div = document.createElement("div");
+    const editar = document.createElement("i");
+    const excluir = document.createElement("i");
+
+    editar.id = this.id;
+    editar.dataset.tipo = "editar";
+    editar.classList.add("fa-solid", "fa-pen-to-square");
+    editar.addEventListener("click", ControllerProdutos.editar);
+
+    excluir.id = this.id;
+    excluir.dataset.tipo = "excluir";
+    excluir.classList.add("fa-solid", "fa-trash");
+    excluir.addEventListener("click", ControllerProdutos.excluir);
+
+    div.append(editar, excluir);
+    div.classList.add("card__interacao--dashboard");
+
+    return div;
   }
 }
 

@@ -8,9 +8,9 @@ class ControllerFiltros {
     if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
       nodePai = document.querySelector(".filtros");
-    } else {
+    } else if (document.title.includes("Dashboard")) {
       produtos = await API.produtosUsurario();
-      nodePai = document.getElementById("");
+      nodePai = document.querySelector(".filtros--dashboard");
     }
 
     const lista = document.createElement("ul");
@@ -53,9 +53,9 @@ class ControllerFiltros {
     if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
       nodePai = document.querySelector(".vitrine");
-    } else {
+    } else if (document.title.includes("Dashboard")) {
       produtos = await API.produtosUsurario();
-      nodePai = document.getElementById("");
+      nodePai = document.querySelector(".vitrine--dashboard");
     }
 
     nodePai.innerHTML = "";
@@ -74,9 +74,13 @@ class ControllerFiltros {
             descricao,
             imagem
           );
-          const card = item.cardHome();
-
-          nodePai.appendChild(card);
+          if (document.title.includes("Home")) {
+            const card = item.cardHome();
+            nodePai.appendChild(card);
+          } else if (document.title.includes("Dashboard")) {
+            const card = item.cardDashboard();
+            nodePai.appendChild(card);
+          }
         }
       });
     }
@@ -96,13 +100,12 @@ class ControllerFiltros {
     const todos = "todos";
 
     let nodePai, produtos;
-
     if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
       nodePai = document.querySelector(".vitrine");
-    } else {
+    } else if (document.title.includes("Dashboard")) {
       produtos = await API.produtosUsurario();
-      nodePai = document.getElementById("");
+      nodePai = document.querySelector(".vitrine--dashboard");
     }
 
     nodePai.innerHTML = "";
@@ -125,9 +128,13 @@ class ControllerFiltros {
             descricao,
             imagem
           );
-          const card = item.cardHome();
-
-          nodePai.appendChild(card);
+          if (document.title.includes("Home")) {
+            const card = item.cardHome();
+            nodePai.appendChild(card);
+          } else if (document.title.includes("Dashboard")) {
+            const card = item.cardDashboard();
+            nodePai.appendChild(card);
+          }
         }
       });
     }

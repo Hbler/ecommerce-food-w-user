@@ -1,12 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>Kenzie Food | Dashboard</title>
   </head>
+
   <body>
-    <script src="../script.js"></script>
+    <header class="cabecalho">
+      <h1 class="titulo">Kenzie<span>Food</span></h1>
+
+      <button class="usuario">
+        <i class="fa-solid fa-user"></i>
+        <ul class="acesso">
+          <li class="acesso__login">Login</li>
+          <li class="acesso__cadastro">Cadastro</li>
+        </ul>
+      </button>
+      <div class="pesquisa__moldura">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          class="pesquisa"
+          type="text"
+          name="pesquisa"
+          placeholder="Pesquisar por produtos"
+        />
+      </div>
+    </header>
+
+    <section class="tela__centro--dashboard">
+      <main class="vitrine__moldura--dashboard">
+        <div class="filtros__moldura">
+          <nav class="filtros--dashboard"></nav>
+          <button class="cadastrar" data-tipo="cadastrar">
+            Adicionar Novo Produto
+          </button>
+        </div>
+        <ul class="vitrine__titulos">
+          <li>Produto</li>
+          <li>Descrição</li>
+          <li>Categoria</li>
+          <li>Ações</li>
+        </ul>
+        <ul class="vitrine--dashboard"></ul>
+      </main>
+    </section>
+
+    <script src="../script.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/8fa2904e7b.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

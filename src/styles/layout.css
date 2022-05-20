@@ -47,7 +47,7 @@
 }
 
 .acesso {
-  top: 10%;
+  top: -500%;
   right: 0;
   width: 30vw;
   height: fit-content;
@@ -64,7 +64,7 @@
 }
 
 .acesso::before {
-  top: -15%;
+  top: -6%;
   right: 19%;
   content: "";
   position: absolute;
@@ -116,14 +116,16 @@
   background-color: #f8f9fa;
 }
 
-.filtros {
+.filtros,
+.filtros--dashboard {
   width: 100vw;
   height: 10vh;
   display: flex;
   align-items: center;
 }
 
-.filtros ul {
+.filtros ul,
+.filtros--dashboard ul {
   height: 100%;
   width: 100%;
   display: flex;

@@ -84,11 +84,18 @@ class ControllerUsuario {
     const token = localStorage.getItem("token");
     const acesso = document.querySelector(".acesso");
     if (token && acesso.childElementCount === 2) {
+      const home = document.createElement("li");
       const dashboard = document.createElement("li");
       const logout = document.createElement("li");
 
+      home.innerText = "Home";
+      home.classList.add("acesso__home");
+      home.addEventListener("click", () => {
+        self.location = "../../index.html";
+      });
+
       dashboard.innerText = "Dashboard";
-      logout.classList.add("acesso__dashboard");
+      dashboard.classList.add("acesso__dashboard");
       dashboard.addEventListener("click", () => {
         self.location = "./src/pages/dashboard.html";
       });
@@ -102,11 +109,13 @@ class ControllerUsuario {
         ControllerUsuario.ajustarAcesso();
       });
 
-      acesso.append(dashboard, logout);
-    } else if (!token && acesso.childElementCount === 2) {
+      acesso.append(home, dashboard, logout);
+    } else if (!token && acesso.childElementCount > 2) {
+      const home = document.querySelector(".acesso__home");
       const dashboard = document.querySelector(".acesso__dashboard");
       const logout = document.querySelector(".acesso__logout");
 
+      acesso.removeChild(home);
       acesso.removeChild(dashboard);
       acesso.removeChild(logout);
     }

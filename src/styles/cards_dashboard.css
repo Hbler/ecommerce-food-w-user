@@ -1,0 +1,103 @@
+.card--dashboard {
+  margin: 1% 0 2%;
+  padding: 2% 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 1px solid #868e96;
+  background-color: #f8f9fa;
+}
+
+.card__moldura--dashboard {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card__nome--dashboard {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card__descricao--dashboard {
+  margin: 4% 0;
+}
+
+.card__tag--dashboard,
+.card__interacao--dashboard {
+  width: 45%;
+}
+
+.card__tag--dashboard {
+  padding: 2%;
+}
+
+.card__tag--dashboard:hover {
+  background-color: #e9ecef;
+}
+
+.card__interacao--dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card__interacao--dashboard i {
+  padding: 10%;
+  color: #868e96;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card__interacao--dashboard i:hover {
+  color: #fff;
+  background-color: #ff2253;
+}
+
+@media (min-width: 700px) {
+  .card--dashboard {
+    padding: 1%;
+    height: 10vh;
+    align-items: center;
+  }
+  .card__moldura--dashboard {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .card__nome--dashboard {
+    width: 15%;
+    height: fit-content;
+    font-size: 0.8rem;
+  }
+
+  .card__descricao--dashboard {
+    width: 40%;
+    height: fit-content;
+    margin: 0;
+  }
+
+  .card__tag--dashboard,
+  .card__interacao--dashboard {
+    width: 15%;
+    height: fit-content;
+  }
+
+  .card__tag--dashboard {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card--dashboard {
+    height: 15vh;
+  }
+}
