@@ -113,7 +113,7 @@ class API {
     return res;
   }
   static async produtosEditar(id, obj) {
-    const url = API.base_URL + "/my/products/" + id;
+    const url = API.base_URL + "/my/products" + id;
 
     const res = await fetch(url, {
       method: "POST",
@@ -121,9 +121,11 @@ class API {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(obj),
+      body: obj,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json();
+      })
       .then((res) => res)
       .catch((err) => {
         console.log(err);
