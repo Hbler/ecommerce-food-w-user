@@ -1,6 +1,6 @@
 .cabecalho {
   height: 25vh;
-  padding: 0 3%;
+  padding: 1% 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .usuario {
   top: 9%;
-  right: 5%;
+  right: 7%;
   width: 15vw;
   height: 15vw;
   border: none;
@@ -54,7 +54,7 @@
 .pesquisa {
   width: 100%;
   height: 100%;
-  padding: 5% 0 5% 13%;
+  padding: 3% 0 3% 13%;
   color: #868e96;
   border: none;
   border-radius: 10px;
@@ -86,8 +86,6 @@
   position: fixed;
   width: 100vw;
   height: 10vh;
-  color: #fff;
-  background-color: #ff2253;
 }
 
 .carrinho__titulo {
@@ -96,9 +94,132 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
   font-size: 1rem;
+  background-color: #ff2253;
 }
 
 .carrinho__titulo i {
   margin-right: 5%;
+}
+
+@media (min-width: 700px) {
+  .cabecalho {
+    flex-direction: row;
+    justify-content: start;
+    box-shadow: 1px 0 5px -1px #868e96;
+  }
+
+  .titulo {
+    margin-right: 10%;
+    align-self: unset;
+  }
+
+  .usuario {
+    top: 30%;
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .pesquisa__moldura {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cabecalho {
+    height: 10vh;
+    padding: 1% 2%;
+  }
+
+  .titulo {
+    margin-right: 50%;
+  }
+
+  .usuario {
+    top: 12%;
+    right: 2%;
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .usuario i {
+    font-size: 1.2rem;
+  }
+
+  .pesquisa__moldura {
+    width: 30%;
+  }
+
+  .tela__centro {
+    width: 100vw;
+    height: 89vh;
+    padding: 2% 0;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid blue;
+  }
+
+  .vitrine__moldura {
+    width: 68vw;
+  }
+
+  .filtros {
+    width: 100%;
+  }
+
+  .vitrine {
+    width: 100%;
+    height: 75vh;
+  }
+
+  .carrinho {
+    width: 27vw;
+    height: 65vh;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid salmon;
+  }
+
+  .carrinho__titulo {
+    height: 15%;
+    font-weight: 400;
+    justify-content: flex-start;
+  }
+
+  .carrinho__titulo i {
+    margin: 0 5%;
+    font-size: 0.8rem;
+  }
+
+  .carrinho__produtos {
+    width: 100%;
+    height: 63%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    border: 1px solid red;
+  }
+
+  .carrinho__resumo {
+    width: 100%;
+    height: 22%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+  }
+
+  .carrinho__resumo div {
+    height: 49%;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+
+  .carrinho__resumo--qtd {
+    background-color: #f8f9fa;
+  }
 }

@@ -25,18 +25,28 @@
       </div>
     </header>
 
-    <main>
-      <nav class="filtros"></nav>
-      <section class="vitrine"></section>
-
+    <section class="tela__centro">
+      <main class="vitrine__moldura">
+        <nav class="filtros"></nav>
+        <section class="vitrine"></section>
+      </main>
       <aside class="carrinho">
         <h3 class="carrinho__titulo">
           <i class="fa-solid fa-cart-arrow-down"></i>Carrinho
         </h3>
-
-        <section id="carrinho__produtos"></section>
+        <section class="carrinho__produtos"></section>
+        <section class="carrinho__resumo clear">
+          <div class="carrinho__resumo--qtd">
+            <p>Quantidade:</p>
+            <p id="quantidade">2</p>
+          </div>
+          <div class="carrinho__resumo--total">
+            <p>Total:</p>
+            <p id="valor">R$20,00</p>
+          </div>
+        </section>
       </aside>
-    </main>
+    </section>
 
     <script src="./src/script.js" type="module"></script>
     <script
