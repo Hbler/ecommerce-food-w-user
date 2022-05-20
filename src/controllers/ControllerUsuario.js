@@ -105,7 +105,10 @@ class ControllerUsuario {
       logout.addEventListener("click", () => {
         localStorage.removeItem("token");
         if (document.title.includes("Home")) location.reload();
-        else if (document.title.includes("Dashboard")) history.back();
+        else if (document.title.includes("Dashboard")) {
+          history.back();
+          location.reload();
+        }
         ControllerUsuario.ajustarAcesso();
       });
 
