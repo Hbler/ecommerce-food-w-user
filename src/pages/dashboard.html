@@ -1,63 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/dashboard.css" />
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <title>Kenzie Food | Dashboard</title>
   </head>
+
   <body>
-    <nav>
-      
-      <section class="logo">
-        <p id="primeiroNome">Kenzie<p id="segundoNome">Food</p></p>
-      </section>
+    <header class="cabecalho">
+      <h1 class="titulo">Kenzie<span>Food</span></h1>
 
-      <section class="navSemLogo">
-
-        <section class="barraPesquisa">
-          <i class="fa-solid fa-magnifying-glass" id="lupa"></i>
-          <input class="barra" type="text" placeholder="       Pesquisar" />
-        </section>
-  
-        <section class="iconeAvatar">
-
-          <img src="" alt="nome">
-        </section>
-
-      </section>
-      
-    </nav>
-
-    <header>
-
-      <aside class="menuHeader">
-
-        <section class="filterMenuHeader">
-          <ul class="ul">
-            <li class="filtro" id="todos">Todos</li>
-            <li class="filtro" id="panificadora">Panificadora</li>
-            <li class="filtro" id="frutas">Frutas</li>
-            <li class="filtro" id="bebidas">Bebidas</li>
-          </ul>
-        </section>
-
-        <section class="adicionarItem">
-          <button class="botaoAdicionarItem">Adicionar novo produto</button>
-        </section>
-
-      </aside>
-
+      <button class="usuario">
+        <i class="fa-solid fa-user"></i>
+        <ul class="acesso">
+          <li class="acesso__login">Login</li>
+          <li class="acesso__cadastro">Cadastro</li>
+        </ul>
+      </button>
+      <div class="pesquisa__moldura">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          class="pesquisa"
+          type="text"
+          name="pesquisa"
+          placeholder="Pesquisar por produtos"
+        />
+      </div>
     </header>
 
-    <aside class="asideDescricao">
-      <section  class="descricao">
-        <p>Produto</p> <p>Categorias</p> <p>Descrição</p> <p>Ações</p>
-      </section>
-      <ul id="listaDeProdutos"></ul>
+    <section class="tela__centro--dashboard">
+      <main class="vitrine__moldura--dashboard">
+        <nav class="filtros--dashboard"></nav>
+        <section class="vitrine--dashboard"></section>
+      </main>
+    </section>
 
-    <script src="../script.js"></script>
-    <script src="https://kit.fontawesome.com/8fa2904e7b.js" crossorigin="anonymous"></script>
+    <script src="./src/script.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/8fa2904e7b.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
