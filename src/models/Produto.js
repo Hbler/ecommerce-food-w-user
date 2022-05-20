@@ -1,3 +1,4 @@
+import ControllerFiltros from "../controllers/ControllerFiltros.js";
 class Produto {
   constructor(id, nome, preco, categoria, descricao, imagem) {
     this.id = id;
@@ -56,7 +57,7 @@ class Produto {
 
     tag.appendChild(categoria);
     tag.classList.add("card__tag");
-    // tag.addEventListener('click', funcaoFiltrar)
+    tag.addEventListener("click", ControllerFiltros.filtrar);
     return tag;
   }
 
