@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Kenzie Food | Dashboard</title>
   </head>
 
@@ -31,12 +31,21 @@
 
     <section class="tela__centro--dashboard">
       <main class="vitrine__moldura--dashboard">
-        <nav class="filtros--dashboard"></nav>
+        <div class="filtros__moldura">
+          <nav class="filtros--dashboard"></nav>
+          <button class="cadastrar">Adicionar Novo Produto</button>
+        </div>
+        <ul class="vitrine__titulos">
+          <li>Produto</li>
+          <li>Categoria</li>
+          <li>Descrição</li>
+          <li>Ações</li>
+        </ul>
         <section class="vitrine--dashboard"></section>
       </main>
     </section>
 
-    <script src="./src/script.js" type="module"></script>
+    <script src="../script.js" type="module"></script>
     <script
       src="https://kit.fontawesome.com/8fa2904e7b.js"
       crossorigin="anonymous"

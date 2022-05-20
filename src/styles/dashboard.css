@@ -1,0 +1,118 @@
+.vitrine__moldura--dashboard {
+  padding: 0 3%;
+}
+
+.filtros__moldura {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.filtros--dashboard {
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.filtros--dashboard li {
+  margin: 0 2% 0 0;
+}
+
+.vitrine__moldura--dashboard .cadastrar {
+  width: 100%;
+  margin: 3% 0 2%;
+  padding: 3%;
+  border: none;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ff2253;
+}
+
+.vitrine__moldura--dashboard .cadastrar:hover {
+  background-color: #000;
+}
+
+.vitrine__titulos {
+  margin: 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: scroll;
+  visibility: hidden;
+  border: 1px solid orangered;
+}
+
+.vitrine__titulos li {
+  color: #868e96;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.vitrine--dashboard {
+  height: 50vh;
+  overflow: scroll;
+  border: 1px solid black;
+}
+
+@media (min-width: 700px) {
+  .vitrine__moldura--dashboard {
+    height: 79vh;
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .filtros__moldura {
+    flex-direction: row;
+  }
+
+  .filtros--dashboard {
+    width: 68%;
+  }
+
+  .vitrine__moldura--dashboard .cadastrar {
+    width: 28%;
+    height: fit-content;
+    padding: 1.5%;
+    transform: translateY(-10%);
+  }
+
+  .vitrine__titulos {
+    width: 100%;
+    margin: 1% 0;
+    visibility: visible;
+  }
+
+  .vitrine--dashboard {
+    width: 100%;
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .vitrine__moldura--dashboard {
+    height: 89vh;
+  }
+
+  .vitrine__moldura--dashboard .cadastrar {
+    width: 30%;
+    padding: 1%;
+    transform: translateY(-20%);
+    border-radius: 30px;
+  }
+
+  .filtros__moldura,
+  .vitrine__titulos,
+  .vitrine--dashboard {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .vitrine--dashboard {
+    height: 70vh;
+  }
+}

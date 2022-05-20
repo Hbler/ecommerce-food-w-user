@@ -2,8 +2,10 @@ import ControllerVitrine from "./controllers/ControllerVitrine.js";
 import ControllerFiltros from "./controllers/ControllerFiltros.js";
 import ContollerFormulario from "./controllers/ControllerFormulario.js";
 import ControllerCarrinho from "./controllers/ControllerCarrinho.js";
+import ControllerUsuario from "./controllers/ControllerUsuario.js";
 
 ControllerVitrine.mostrarTodos();
+ControllerUsuario.ajustarAcesso();
 
 await ControllerFiltros.criarSelecao();
 
