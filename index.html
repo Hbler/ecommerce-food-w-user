@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles/style.css" />
-    <title>Document</title>
+    <title>Kenzie Food</title>
   </head>
+
   <body>
+    <header class="cabecalho">
+      <h1 class="titulo">Kenzie<span>Food</span></h1>
+
+      <button class="usuario"><i class="fa-solid fa-user"></i></button>
+      <div class="pesquisa__moldura">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          class="pesquisa"
+          type="text"
+          name="pesquisa"
+          placeholder="Pesquisar por produtos"
+        />
+      </div>
+    </header>
+
+    <section class="tela__centro">
+      <main class="vitrine__moldura">
+        <nav class="filtros"></nav>
+        <section class="vitrine"></section>
+      </main>
+      <aside class="carrinho">
+        <h3 class="carrinho__titulo">
+          <i class="fa-solid fa-cart-arrow-down"></i>Carrinho
+        </h3>
+        <section class="carrinho__produtos"></section>
+        <section class="carrinho__resumo clear">
+          <div class="carrinho__resumo--qtd">
+            <p>Quantidade:</p>
+            <p id="quantidade">2</p>
+          </div>
+          <div class="carrinho__resumo--total">
+            <p>Total:</p>
+            <p id="valor">R$20,00</p>
+          </div>
+        </section>
+      </aside>
+    </section>
+
     <script src="./src/script.js" type="module"></script>
     <script
       src="https://kit.fontawesome.com/8fa2904e7b.js"
