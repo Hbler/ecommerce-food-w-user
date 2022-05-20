@@ -1,5 +1,4 @@
 import ControllerVitrine from "./controllers/ControllerVitrine.js";
-
 import ControllerFiltros from "./controllers/ControllerFiltros.js";
 import ControllerCarrinho from "./controllers/ControllerCarrinho.js";
 
@@ -12,3 +11,6 @@ localStorage.setItem("carrinho", "{}");
 
 const input = document.querySelector(".pesquisa");
 input.addEventListener("keydown", ControllerFiltros.pesquisar);
+
+const carrinho = document.querySelector(".carrinho__titulo");
+carrinho.addEventListener("click", ControllerCarrinho.modalCarrinho);

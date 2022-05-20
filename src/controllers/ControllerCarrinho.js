@@ -152,6 +152,60 @@ class ControllerCarrinho {
       carrinho.appendChild(div);
     }
   }
+
+  static modalCarrinho() {
+    const body = document.body;
+
+    const fundo = document.createElement("section");
+    const modal = document.createElement("aside");
+
+    fundo.classList.add("modal__fundo");
+    modal.classList.add("carrinho", "carrinho--modal");
+
+    const titulo = document.createElement("h3");
+    const icone = document.createElement("i");
+    const fechar = document.createElement("i");
+    let palavra = "Carrinho";
+
+    titulo.classList.add("carrinho__titulo", "carrinho__titulo--modal");
+    icone.classList.add("fa-solid", "fa-cart-arrow-down");
+    fechar.classList.add("fa-solid", "fa-xmark", "fechar");
+
+    fechar.addEventListener("click", () => {
+      body.removeChild(fundo);
+    });
+
+    titulo.append(icone, palavra, fechar);
+
+    const produtos = document.createElement("section");
+    produtos.classList.add("carrinho__produtos", "carrinho__produtos--modal");
+
+    const resumo = document.createElement("section");
+    const quantidade = document.createElement("div");
+    const tituloQtd = document.createElement("p");
+    const valorQtd = document.createElement("p");
+    const total = document.createElement("section");
+    const tituloTotal = document.createElement("p");
+    const valorTotal = document.createElement("p");
+
+    resumo.classList.add("carrinho__resumo", "carrinho__resumo--modal");
+    quantidade.classList.add("carrinho__resumo--qtd", "modal");
+    total.classList.add("carrinho__resumo--total", "modal");
+
+    tituloQtd.innerText = "Quantidade:";
+    valorQtd.innerText = 0;
+    tituloTotal.innerText = "Total:";
+    valorTotal.innerText = 0;
+
+    quantidade.append(tituloQtd, valorQtd);
+    total.append(tituloTotal, valorTotal);
+    resumo.append(quantidade, total);
+
+    modal.append(titulo, produtos, resumo);
+    fundo.appendChild(modal);
+
+    body.appendChild(fundo);
+  }
 }
 
 export default ControllerCarrinho;
