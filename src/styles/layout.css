@@ -171,6 +171,7 @@
   color: #fff;
   font-size: 1rem;
   background-color: #ff2253;
+  cursor: pointer;
 }
 
 .carrinho__titulo i {
@@ -310,6 +311,7 @@
     height: 15%;
     font-weight: 400;
     justify-content: flex-start;
+    cursor: default;
   }
 
   .carrinho__titulo i {

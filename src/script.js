@@ -2,7 +2,6 @@ import ControllerVitrine from "./controllers/ControllerVitrine.js";
 import ControllerFiltros from "./controllers/ControllerFiltros.js";
 import ContollerFormulario from "./controllers/ControllerFormulario.js";
 import ControllerCarrinho from "./controllers/ControllerCarrinho.js";
-import ControllerUsuario from "./controllers/ControllerUsuario.js";
 
 ControllerVitrine.mostrarTodos();
 
@@ -22,5 +21,3 @@ cadastro.addEventListener("click", ContollerFormulario.formularioCadastro);
 
 const carrinho = document.querySelector(".carrinho__titulo");
 carrinho.addEventListener("click", ControllerCarrinho.modalCarrinho);
-
-ControllerUsuario.ajustarAcesso();
