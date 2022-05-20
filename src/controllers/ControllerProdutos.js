@@ -85,6 +85,9 @@ class ControllerProdutos {
       API.produtosApagar(id);
       body.removeChild(fundo);
       ControllerProdutos.modalTemporario("Produto Excluído!");
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     });
 
     nao.innerText = "Não";

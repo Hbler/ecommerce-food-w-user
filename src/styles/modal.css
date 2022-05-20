@@ -151,6 +151,7 @@
   color: #000;
 }
 
+.modal__dashboard--excluir .modal__fechar,
 .modal__fechar--dashboard {
   top: 25%;
   right: 5%;
@@ -167,14 +168,17 @@
   border: 1px solid transparent;
 }
 
+.modal__dashboard--excluir .modal__fechar:hover,
 .modal__fechar--dashboard:hover {
   border: 1px solid #ff2253;
 }
 
+.modal__dashboard--excluir .modal__fechar,
 .modal__fechar--dashboard i {
   color: #868e96;
 }
 
+.modal__dashboard--excluir .modal__fechar:hover,
 .modal__fechar--dashboard:hover i {
   color: #ff2253;
 }
@@ -331,6 +335,7 @@
     border-radius: 10px;
   }
 
+  .modal__dashboard--excluir .modal__fechar,
   .modal__fechar--dashboard {
     top: 25%;
     width: 7%;
