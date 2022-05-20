@@ -5,11 +5,9 @@ class ControllerFiltros {
   static async criarSelecao() {
     let nodePai, produtos;
 
-    // trocar pelo correto quando layout estiver pronto
-    if (document.title.includes("Document")) {
+    if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
-      // trocar pelo correto quando layout estiver pronto
-      nodePai = document.getElementById("filtros");
+      nodePai = document.querySelector(".filtros");
     } else {
       produtos = await API.produtosUsurario();
       nodePai = document.getElementById("");
@@ -19,7 +17,9 @@ class ControllerFiltros {
 
     const categorias = Array.from(
       new Set(
-        produtos.map((obj) => obj.categoria).map((str) => str.toLowerCase())
+        produtos
+          .map((obj) => obj.categoria)
+          .map((str) => str.toLowerCase().trim())
       )
     );
 
@@ -30,6 +30,7 @@ class ControllerFiltros {
 
       li.innerText = str.slice(0, 1).toUpperCase() + str.slice(1);
       li.addEventListener("click", this.filtrar);
+      li.classList.add("filtros__categoria");
 
       lista.appendChild(li);
     });
@@ -38,14 +39,19 @@ class ControllerFiltros {
   }
 
   static async filtrar(e) {
+    const filtros = e.target.parentElement.childNodes;
     const categoria = ControllerFiltros.ajustarStr(e.target.innerText);
     let nodePai, produtos;
 
-    // trocar pelo correto quando layout estiver pronto
-    if (document.title.includes("Document")) {
+    filtros.forEach((li) => {
+      li.classList.remove("ativo");
+    });
+
+    this.classList.add("ativo");
+
+    if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
-      // trocar pelo correto quando layout estiver pronto
-      nodePai = document.getElementById("vitrine");
+      nodePai = document.querySelector(".vitrine");
     } else {
       produtos = await API.produtosUsurario();
       nodePai = document.getElementById("");
@@ -76,6 +82,13 @@ class ControllerFiltros {
   }
 
   static async pesquisar(e) {
+    const filtros = document.querySelectorAll(".filtros__categoria");
+    filtros.forEach((li) => {
+      li.classList.remove("ativo");
+    });
+
+    filtros[0].classList.add("ativo");
+
     const pesquisa = ControllerFiltros.ajustarStr(
       ControllerFiltros.ajustarStr(e.target.value)
     );
@@ -83,11 +96,9 @@ class ControllerFiltros {
 
     let nodePai, produtos;
 
-    // trocar pelo correto quando layout estiver pronto
-    if (document.title.includes("Document")) {
+    if (document.title.includes("Home")) {
       produtos = await API.produtosTodos();
-      // trocar pelo correto quando layout estiver pronto
-      nodePai = document.getElementById("vitrine");
+      nodePai = document.querySelector(".vitrine");
     } else {
       produtos = await API.produtosUsurario();
       nodePai = document.getElementById("");

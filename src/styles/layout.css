@@ -62,13 +62,39 @@
   background-color: #e9ecef;
 }
 
+.pesquisa:focus {
+  color: #000;
+  outline: 2px solid #000;
+  background-color: #f8f9fa;
+}
+
 .filtros {
   width: 100vw;
   height: 10vh;
   display: flex;
   align-items: center;
+}
+
+.filtros ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
   overflow: scroll;
-  border: 1px solid red;
+}
+
+.filtros__categoria {
+  margin: 0 2%;
+  padding: 2% 4%;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filtros__categoria:hover,
+.filtros__categoria.ativo {
+  color: #fff;
+  background-color: #ff2253;
 }
 
 .vitrine {
@@ -76,8 +102,8 @@
   height: 55vh;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   overflow: scroll;
-  border: 1px solid red;
 }
 
 .carrinho {
@@ -105,6 +131,7 @@
 
 @media (min-width: 700px) {
   .cabecalho {
+    height: 20vh;
     flex-direction: row;
     justify-content: start;
     box-shadow: 1px 0 5px -1px #868e96;
@@ -123,6 +150,22 @@
 
   .pesquisa__moldura {
     width: 50%;
+  }
+
+  .filtros {
+    height: 14vh;
+  }
+
+  .filtros__categoria {
+    margin: 0 2%;
+    padding: 1% 2%;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .vitrine {
+    height: 56vh;
   }
 }
 
@@ -157,7 +200,6 @@
     padding: 2% 0;
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid blue;
   }
 
   .vitrine__moldura {
@@ -170,7 +212,8 @@
 
   .vitrine {
     width: 100%;
-    height: 75vh;
+    height: 71vh;
+    flex-wrap: wrap;
   }
 
   .carrinho {
