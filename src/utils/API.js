@@ -113,7 +113,7 @@ class API {
     return res;
   }
   static async produtosEditar(id, obj) {
-    const url = API.base_URL + "/my/products/" + id;
+    const url = API.base_URL + "/my/products" + id;
 
     const res = await fetch(url, {
       method: "POST",
@@ -121,9 +121,11 @@ class API {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(obj),
+      body: obj,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json();
+      })
       .then((res) => res)
       .catch((err) => {
         console.log(err);
@@ -152,7 +154,7 @@ class API {
     return res;
   }
   static async carrinhoRemover(id) {
-    const url = API.base_URL + "/cart/remove" + id;
+    const url = API.base_URL + "/cart/remove/" + id;
 
     const res = await fetch(url, {
       method: "DELETE",
@@ -160,7 +162,10 @@ class API {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res) return "done!";
+        else return res.json();
+      })
       .then((res) => res)
       .catch((err) => {
         console.log(err);
