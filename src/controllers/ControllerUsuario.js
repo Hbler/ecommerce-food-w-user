@@ -110,7 +110,7 @@ class ControllerUsuario {
       });
 
       acesso.append(home, dashboard, logout);
-    } else if (!token && acesso.childElementCount === 2) {
+    } else if (!token && acesso.childElementCount > 2) {
       const home = document.querySelector(".acesso__home");
       const dashboard = document.querySelector(".acesso__dashboard");
       const logout = document.querySelector(".acesso__logout");

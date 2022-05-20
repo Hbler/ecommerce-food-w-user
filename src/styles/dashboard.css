@@ -42,7 +42,6 @@
   justify-content: space-between;
   overflow: scroll;
   visibility: hidden;
-  border: 1px solid orangered;
 }
 
 .vitrine__titulos li {
@@ -54,7 +53,6 @@
 .vitrine--dashboard {
   height: 50vh;
   overflow: scroll;
-  border: 1px solid black;
 }
 
 @media (min-width: 700px) {
@@ -85,6 +83,23 @@
     width: 100%;
     margin: 1% 0;
     visibility: visible;
+  }
+
+  .vitrine__titulos li:nth-child(1) {
+    width: 18%;
+  }
+
+  .vitrine__titulos li:nth-child(2) {
+    width: 27%;
+  }
+
+  .vitrine__titulos li:nth-child(3) {
+    width: 15%;
+    text-align: right;
+  }
+
+  .vitrine__titulos li:nth-child(4) {
+    width: 14%;
   }
 
   .vitrine--dashboard {

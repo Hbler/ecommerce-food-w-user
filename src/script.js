@@ -9,7 +9,6 @@ ControllerUsuario.ajustarAcesso();
 
 await ControllerFiltros.criarSelecao();
 
-ControllerCarrinho.mostrarProdutos();
 localStorage.setItem("carrinho", "{}");
 
 const input = document.querySelector(".pesquisa");
@@ -21,5 +20,17 @@ const cadastro = document.querySelector(".acesso__cadastro");
 login.addEventListener("click", ContollerFormulario.formularioLogin);
 cadastro.addEventListener("click", ContollerFormulario.formularioCadastro);
 
-const carrinho = document.querySelector(".carrinho__titulo");
-carrinho.addEventListener("click", ControllerCarrinho.modalCarrinho);
+if (document.title.includes("Home")) {
+  ControllerCarrinho.mostrarProdutos();
+
+  const carrinho = document.querySelector(".carrinho__titulo");
+  carrinho.addEventListener("click", ControllerCarrinho.modalCarrinho);
+}
+
+if (document.title.includes("Dashboard")) {
+  const cadastrar = document.querySelector(".cadastrar");
+
+  cadastrar.addEventListener("click", () => {
+    ContollerFormulario.produtoUsuario("cadastrar");
+  });
+}

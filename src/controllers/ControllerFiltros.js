@@ -78,7 +78,7 @@ class ControllerFiltros {
             const card = item.cardHome();
             nodePai.appendChild(card);
           } else if (document.title.includes("Dashboard")) {
-            const card = item.cardHome();
+            const card = item.cardDashboard();
             nodePai.appendChild(card);
           }
         }
@@ -132,7 +132,7 @@ class ControllerFiltros {
             const card = item.cardHome();
             nodePai.appendChild(card);
           } else if (document.title.includes("Dashboard")) {
-            const card = item.cardHome();
+            const card = item.cardDashboard();
             nodePai.appendChild(card);
           }
         }
