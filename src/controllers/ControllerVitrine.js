@@ -5,7 +5,7 @@ class ControllerVitrine {
   static async mostrarTodos() {
     const produtos = await API.produtosTodos();
     // trocar pelo correto quando layout estiver pronto
-    // const nodePai = document.
+    const nodePai = document.getElementById("vitrine");
 
     produtos.forEach((obj) => {
       const { id, nome, preco, categoria, descricao, imagem } = obj;
