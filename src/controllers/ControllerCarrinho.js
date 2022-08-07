@@ -16,9 +16,9 @@ class ControllerCarrinho {
 
     const carrinhoLocal = JSON.parse(localStorage.getItem("carrinho"));
 
-    if (localStorage.getItem("token")) {
+    if (!!localStorage.getItem("token")) {
       const salvo = await API.carrinhoSalvo();
-      salvo.forEach((obj) => {
+      salvo?.forEach((obj) => {
         const id = obj.products.id;
         const qtd = obj.quantity;
 
